@@ -1,4 +1,4 @@
-package com.pluralsight.Accounting_Ledger_Version_2;
+package com.pluralsight.AccountingLedgerVersion2;
 
 public class Transaction {
     private String date;
