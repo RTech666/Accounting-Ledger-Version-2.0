@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AccountingLedgerVersion2Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AccountingLedgerVersion2Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AccountingLedgerVersion2Application.class, args);
+        Ledger.main(args);
+    }
 
 }
