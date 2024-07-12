@@ -8,7 +8,7 @@ public class AccountingLedgerVersion2Application {
 
     public static void main(String[] args) {
         SpringApplication.run(AccountingLedgerVersion2Application.class, args);
-        Ledger.main(args);
+        Home.main(args);
     }
 
 }
