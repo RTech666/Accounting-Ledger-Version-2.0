@@ -2,9 +2,17 @@ package com.pluralsight.AccountingLedgerVersion2.handlers;
 import com.pluralsight.AccountingLedgerVersion2.DateTimeUtil;
 import com.pluralsight.AccountingLedgerVersion2.Logger;
 import com.pluralsight.AccountingLedgerVersion2.Transaction;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class DepositHandler {
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/AccountingLedger";
+    private static final String USER = "root";
+    private static final String PASS = "password";
+
     public static void deposit(Scanner input) {
         // Ask user the amount for the deposit.
         System.out.println("Please enter the amount of the deposit: ");
@@ -19,18 +27,38 @@ public class DepositHandler {
         System.out.println("Please enter the vendor from which to deposit: ");
         String vendor = input.nextLine();
 
-        // Initalize date, time, and transaction variables.
+        // Initialize date, time, and transaction variables.
         String date = DateTimeUtil.getCurrentDate();
         String time = DateTimeUtil.getCurrentTime();
         Transaction transaction = new Transaction(date, time, description, vendor, amount);
 
-        // Send transaction to LedgerHandler.
-        LedgerHandler.transactions.add(transaction);
+        // Save transaction to the database
+        saveDepositToDatabase(transaction);
 
         // Print success message.
         System.out.println("Your transaction has been added");
 
         // Log the created transaction.
         Logger.log(date + "|" + time + "|" + description + "|" + vendor + "|" + String.format("%.2f", amount));
+    }
+
+    private static void saveDepositToDatabase(Transaction transaction) {
+        // Create the query.
+        String sql = "INSERT INTO deposits (dateTime, description, vendor, amount) VALUES (?, ?, ?, ?)";
+
+        // Connect to the database.
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+        // Add the information to the database.
+        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, transaction.getDate() + " " + transaction.getTime());
+            pstmt.setString(2, transaction.getDescription());
+            pstmt.setString(3, transaction.getVendor());
+            pstmt.setDouble(4, transaction.getAmount());
+            pstmt.executeUpdate();
+        // Print error.
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
