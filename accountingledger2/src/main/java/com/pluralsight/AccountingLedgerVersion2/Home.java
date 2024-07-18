@@ -22,7 +22,7 @@ public class Home {
             System.out.println("3: Ledger Menu");
             System.out.println("4: Quit");
 
-            // Allow use to enter their choice.
+            // Allow user to enter their choice.
             int choice = input.nextInt();
 
             // Read the user input and execute the appropriate method.

@@ -15,7 +15,7 @@ public class ReportsHome {
 
         while (running) {
             // Print menu choices.
-            System.out.println("Please choose an option:");
+            System.out.println("\nPlease choose an option:");
             System.out.println("1: Month to Date");
             System.out.println("2: Previous Month");
             System.out.println("3: Year to Date");
@@ -23,8 +23,9 @@ public class ReportsHome {
             System.out.println("5: Search by vendor");
             System.out.println("6: Go Back");
 
-            // Allow use to enter their choice.
+            // Allow user to enter their choice.
             int choice = input.nextInt();
+            input.nextLine();
 
             // Read the user input and execute the appropriate method.
             switch (choice) {
@@ -45,7 +46,6 @@ public class ReportsHome {
                     break;
                 case 6:
                     running = false;
-                    LedgerHome.ledgerHome(null);
                     break;
                 default:
                     System.out.println("Invalid selection.");

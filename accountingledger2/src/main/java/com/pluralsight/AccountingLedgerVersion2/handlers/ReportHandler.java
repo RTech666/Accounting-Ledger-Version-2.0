@@ -40,6 +40,7 @@ public class ReportHandler {
 
     // Create monthToDate method.
     public static void monthToDate() {
+        System.out.println("\nMonth to Date Report");
         for (Transaction transaction : transactions) {
             System.out.println("Month to Date");
             LocalDate currentDate = LocalDate.parse(transaction.getDate());
@@ -53,6 +54,7 @@ public class ReportHandler {
 
     // Create previousMonth method.
     public static void previousMonth() {
+        System.out.println("\nPrevious Month Report");
         for (Transaction transaction : transactions) {
             System.out.println("Previous Month");
             LocalDate currentMonth = LocalDate.parse(transaction.getDate());
@@ -65,6 +67,7 @@ public class ReportHandler {
 
     // Create yearToDate method.
     public static void yearToDate() {
+        System.out.println("\nYear to Date Report");
         for (Transaction transaction : transactions) {
             System.out.println("Year to Date");
             LocalDate yearToDate = LocalDate.parse(transaction.getDate());
@@ -77,6 +80,7 @@ public class ReportHandler {
 
     // Create previousYear method.
     public static void previousYear() {
+        System.out.println("\nPrevious Year Report");
         for (Transaction transaction : transactions) {
             System.out.println("Previous Year");
             LocalDate currentYear = LocalDate.parse(transaction.getDate());
@@ -89,7 +93,8 @@ public class ReportHandler {
 
     // Create searchByVendor method.
     public static void searchByVendor(Scanner input) {
-        System.out.println("Please enter the vendor name: ");
+        System.out.print("Please enter the vendor name: ");
+        input.nextLine();
         String vendor = input.nextLine();
         transactions.stream().filter(transaction -> transaction.getVendor().equals(vendor)).forEach(System.out::println);
     }
