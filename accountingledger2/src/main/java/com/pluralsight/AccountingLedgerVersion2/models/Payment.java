@@ -2,7 +2,8 @@ package com.pluralsight.AccountingLedgerVersion2.models;
 
 public class Payment {
     private int id;
-    private String dateTime;
+    private String date;
+    private String time;
     private String description;
     private String vendor;
     private double amount;
@@ -12,9 +13,10 @@ public class Payment {
     }
 
     //Constructor
-    public Payment(int id, String dateTime, String description, String vendor, double amount) {
+    public Payment(int id, String date, String time, String description, String vendor, double amount) {
         this.id = id;
-        this.dateTime = dateTime;
+        this.date = date;
+        this.time = time;
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
@@ -29,12 +31,20 @@ public class Payment {
         this.id = id;
     }
 
-    public String getDateTime() {
-        return dateTime;
+    public String getDate() {
+        return date;
     }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getDescription() {

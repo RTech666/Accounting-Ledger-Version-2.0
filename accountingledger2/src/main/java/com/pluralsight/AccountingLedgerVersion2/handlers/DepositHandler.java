@@ -2,6 +2,8 @@ package com.pluralsight.AccountingLedgerVersion2.handlers;
 import com.pluralsight.AccountingLedgerVersion2.DateTimeUtil;
 import com.pluralsight.AccountingLedgerVersion2.Logger;
 import com.pluralsight.AccountingLedgerVersion2.Transaction;
+import com.pluralsight.AccountingLedgerVersion2.models.Deposit;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,7 +13,7 @@ import java.util.Scanner;
 public class DepositHandler {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/AccountingLedger";
     private static final String USER = "root";
-    private static final String PASS = "password";
+    private static final String PASS = "YUm15510n";
 
     public static void deposit(Scanner input) {
         // Ask user the amount for the deposit.
@@ -30,10 +32,11 @@ public class DepositHandler {
         // Initialize date, time, and transaction variables.
         String date = DateTimeUtil.getCurrentDate();
         String time = DateTimeUtil.getCurrentTime();
-        Transaction transaction = new Transaction(date, time, description, vendor, amount);
+        int id = 0;
+        Deposit deposit = new Deposit(id, date, time, description, vendor, amount);
 
         // Save transaction to the database
-        saveDepositToDatabase(transaction);
+        saveDepositToDatabase(deposit);
 
         // Print success message.
         System.out.println("Your transaction has been added");
@@ -42,7 +45,7 @@ public class DepositHandler {
         Logger.log(date + "|" + time + "|" + description + "|" + vendor + "|" + String.format("%.2f", amount));
     }
 
-    private static void saveDepositToDatabase(Transaction transaction) {
+    private static void saveDepositToDatabase(Deposit deposit) {
         // Create the query.
         String sql = "INSERT INTO deposits (dateTime, description, vendor, amount) VALUES (?, ?, ?, ?)";
 
@@ -51,10 +54,10 @@ public class DepositHandler {
 
         // Add the information to the database.
         PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, transaction.getDate() + " " + transaction.getTime());
-            pstmt.setString(2, transaction.getDescription());
-            pstmt.setString(3, transaction.getVendor());
-            pstmt.setDouble(4, transaction.getAmount());
+            pstmt.setString(1, deposit.getDate() + " " + deposit.getTime());
+            pstmt.setString(2, deposit.getDescription());
+            pstmt.setString(3, deposit.getVendor());
+            pstmt.setDouble(4, deposit.getAmount());
             pstmt.executeUpdate();
         // Print error.
         } catch (SQLException e) {
