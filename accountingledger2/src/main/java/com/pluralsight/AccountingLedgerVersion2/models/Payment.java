@@ -70,4 +70,17 @@ public class Payment {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return
+                "\n\t All Payments\n\t"+
+                        "Id:" + id +
+                        " Date:" + date +
+                        " Time:" + time +
+                        " Description:" + description +
+                        " Vendor:" + vendor +
+                        " Amount:" + amount
+                        ;
+    }
 }

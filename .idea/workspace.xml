@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ce85676-7aef-4345-b87b-64a57279bf6f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountingLedger.sql" beforeDir="false" afterPath="$PROJECT_DIR$/AccountingLedger.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/handlers/LedgerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/handlers/LedgerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/handlers/PaymentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/handlers/PaymentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/handlers/ReportHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/handlers/ReportHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/models/Deposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/models/Deposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/models/Ledger.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/models/Ledger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/models/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/java/com/pluralsight/AccountingLedgerVersion2/models/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountingledger2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/accountingledger2/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,5 +78,10 @@
       <updated>1720402501175</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Accounting_Ledger_Version_2_0$AccountingLedgerVersion2Application.ic" NAME="AccountingLedgerVersion2Application Coverage Results" MODIFIED="1721325473080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.pluralsight.AccountingLedgerVersion2.*</FILTER>
+    </SUITE>
   </component>
 </project>

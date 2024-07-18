@@ -54,4 +54,15 @@ public class Transaction {
     public void setVendor(String vendor) {
         this.vendor = vendor;
     }
+
+    @Override
+    public String toString() {
+        return
+                "\n\t All Transactions \n\t"+
+                        " Date:" + date  +
+                        " Time:" + time  +
+                        " Description:" + description  +
+                        " Vendor:" + vendor  +
+                        " Amount:" + amount ;
+    }
 }

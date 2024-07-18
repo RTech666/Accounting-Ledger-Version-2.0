@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class PaymentHandler {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/accountingledger";
     private static final String USER = "root";
-    private static final String PASS = "YUm15510n";
+    private static final String PASS = "Lamaria$4";
 
     public static void payment(Scanner input) {
         // Ask user the amount for the payment.

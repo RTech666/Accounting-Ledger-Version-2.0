@@ -13,14 +13,13 @@ public class Ledger {
     public Ledger() {
     }
 
-    public Ledger(int id, String date, String time, String description, String vendor, double amount, String type) {
+    public Ledger(int id, String date, String time, String description, String vendor, double amount) {
         this.id = id;
         this.date = date;
         this.time = time;
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
-        this.type = type;
     }
 
     public int getId() {
@@ -71,11 +70,16 @@ public class Ledger {
         this.amount = amount;
     }
 
-    public String getType() {
-        return type;
+    @Override
+    public String toString() {
+        return
+                "\n\t All Transactions \n\t"+
+                "Id:" + id +
+                        " Date:" + date  +
+                        " Time:" + time  +
+                        " Description:" + description  +
+                        " Vendor:'" + vendor  +
+                        " Amount:" + amount ;
+    }
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-}
