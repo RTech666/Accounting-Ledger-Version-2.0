@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class PaymentHandler {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/AccountingLedger";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/accountingledger";
     private static final String USER = "root";
     private static final String PASS = "YUm15510n";
 

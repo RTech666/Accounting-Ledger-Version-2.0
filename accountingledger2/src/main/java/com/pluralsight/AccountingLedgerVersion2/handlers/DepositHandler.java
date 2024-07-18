@@ -1,9 +1,7 @@
 package com.pluralsight.AccountingLedgerVersion2.handlers;
 import com.pluralsight.AccountingLedgerVersion2.DateTimeUtil;
 import com.pluralsight.AccountingLedgerVersion2.Logger;
-import com.pluralsight.AccountingLedgerVersion2.Transaction;
 import com.pluralsight.AccountingLedgerVersion2.models.Deposit;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,7 +9,8 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class DepositHandler {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/AccountingLedger";
+    // Initalize the varibles for the database connection.
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/accountingledger";
     private static final String USER = "root";
     private static final String PASS = "YUm15510n";
 

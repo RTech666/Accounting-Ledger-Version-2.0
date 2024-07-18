@@ -20,8 +20,9 @@ public class ReportsHome {
             System.out.println("2: Previous Month");
             System.out.println("3: Year to Date");
             System.out.println("4: Previous Year");
-            System.out.println("5: Search by vendor");
-            System.out.println("6: Go Back");
+            System.out.println("5: Search by Vendor");
+            System.out.println("6: Custom Search");
+            System.out.println("7: Go Back");
 
             // Allow user to enter their choice.
             int choice = input.nextInt();
@@ -45,6 +46,8 @@ public class ReportsHome {
                     ReportHandler.searchByVendor(input);
                     break;
                 case 6:
+                    ReportHandler.customSearch(input);
+                case 7:
                     running = false;
                     break;
                 default:
